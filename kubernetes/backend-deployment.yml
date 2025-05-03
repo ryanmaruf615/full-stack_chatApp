@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  backend-deployment
+  namespace: chatapp
+
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      name: backend-pod  
+      namespace: chatapp
+      labels:
+        app:  backend
+    spec:
+     
+      containers:
+      - name: chatapp-backend
+        image:  marufhossainbd615/chatapp-backend:latest
+
+        env:
+        - name: NODE_ENV
+          value: production
+
+        ports:
+        - containerPort: 5001
+        
+   #       name:  MYAPP
+   #     volumeMounts:
+   #     - name: localtime
+   #       mountPath: /etc/localtime
+   #   volumes:
+   #     - name: localtime
+   #       hostPath:
+   # #        path: /usr/share/zoneinfo/Asia/Shanghai
+   #   restartPolicy: Always
