@@ -51,7 +51,7 @@ This project aims to provide a real-time chat experience that's both scalable an
 
 * **[Node.js](https://nodejs.org/)** (v14 or higher)
 * **[Docker](https://www.docker.com/get-started)** (for containerizing the app)
-* **[Git](https://git-scm.com/downloads)** (to clone the repository)
+* **[Git](https://github.com/ryanmaruf615/full-stack_chatApp.git)** (to clone the repository)
 
 
 ## 📝 Setup .env File:
